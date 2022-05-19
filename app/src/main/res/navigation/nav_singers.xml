@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_singers"
+    app:startDestination="@id/artistCollectionListFragment">
+
+    <fragment
+        android:id="@+id/artistCollectionListFragment"
+        android:name="com.ari.singersapp.ui.view.ArtistCollectionListFragment"
+        android:label="artist_collection_list_fragment"
+        tools:layout="@layout/artist_collection_list_fragment">
+        <action
+            android:id="@+id/action_artistCollectionListFragment_to_artistDetailFragment"
+            app:destination="@id/artistDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistDetailFragment"
+        android:name="com.ari.singersapp.ui.view.ArtistDetailFragment"
+        android:label="artist_detail_fragment"
+        tools:layout="@layout/artist_detail_fragment">
+        <action
+            android:id="@+id/action_artistDetailFragment_to_artistWebViewFragment"
+            app:destination="@id/artistWebViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artistWebViewFragment"
+        android:name="com.ari.singersapp.ui.view.ArtistWebViewFragment"
+        android:label="fragment_artist_web_view"
+        tools:layout="@layout/fragment_artist_web_view" />
+</navigation>
