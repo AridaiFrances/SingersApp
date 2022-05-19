@@ -6,6 +6,20 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            ""
+            storePassword ""
+            keyAlias ""
+            keyPassword ""
+        }
+        release {
+        storePassword ""
+            keyPassword ""
+            keyAlias ""
+            storeFile ""
+        }
+    }
     compileSdk 32
 
     defaultConfig {
