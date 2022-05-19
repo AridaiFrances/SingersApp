@@ -1,7 +1,7 @@
 package com.ari.singersapp.data.repository
 
 import com.ari.singersapp.data.remote.ApiHelper
-import com.ari.singersapp.model.artist.Artist
+import com.ari.singersapp.model.artist.artist_info.ArtistInfoResponse
 import com.ari.singersapp.model.artist.search_by_name.ArtistByNameResponse
 import com.ari.singersapp.model.artist.top_albums.ArtistTopAlbumsResponse
 import retrofit2.Response
@@ -47,7 +47,7 @@ class MainRepository(private val apiHelper: ApiHelper) {
         method: String,
         format: String,
         apiKey: String
-    ): Response<Artist> = apiHelper.getArtistInfo(artistMbid, method, format, apiKey)
+    ): Response<ArtistInfoResponse> = apiHelper.getArtistInfo(artistMbid, method, format, apiKey)
 
     /**
      * @param artistMbid artist mbid obtained from getTopArtists method

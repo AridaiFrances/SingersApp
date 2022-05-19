@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.view.ArtistCollectionListFragment">
+    tools:context=".ui.view.ArtistCollectionListFragment"
+    android:background="@color/orangeLight">
 
     <com.ari.singersapp.ui.component.CustomSearchView
         android:id="@+id/customViewSearch"

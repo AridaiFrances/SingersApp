@@ -10,7 +10,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ari.singersapp.R
 import com.ari.singersapp.databinding.ArtistCollectionListFragmentBinding
@@ -49,7 +48,9 @@ class ArtistCollectionListFragment : Fragment() {
         setupObserver()
     }
 
-
+    /**
+     * Start to observe LiveData to refresh UI
+     */
     private fun setupObserver() {
         viewModel.artists.observe(viewLifecycleOwner) {
             binding.apply {
@@ -80,6 +81,9 @@ class ArtistCollectionListFragment : Fragment() {
 
     }
 
+    /**
+     * Init recyclerView
+     */
     private fun initArtistRecyclerView() {
         adapter = ArtistsAdapter(arrayListOf(), object : ArtistsAdapter.OnArtistClickListener {
             override fun onClick(artistMbid: String?) {
@@ -90,23 +94,22 @@ class ArtistCollectionListFragment : Fragment() {
         binding.apply {
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.setHasFixedSize(true)
-            recyclerView.addItemDecoration(
-                DividerItemDecoration(
-                    recyclerView.context,
-                    (recyclerView.layoutManager as LinearLayoutManager).orientation
-                )
-            )
-
             recyclerView.adapter = adapter
         }
 
     }
 
+    /**
+     * Refresh data and adapter
+     */
     private fun reloadRecyclerViewContent(artistsList: ArrayList<Artist>) {
         adapter.addData(artistsList)
         adapter.notifyDataSetChanged()
     }
 
+    /**
+     * Init custom searchView
+     */
     private fun initCustomSearchView() {
         binding.customViewSearch.setOnSearchListener(object : CustomSearchView.OnSearchListener {
             override fun onSearchResults(textData: String) {
@@ -122,10 +125,16 @@ class ArtistCollectionListFragment : Fragment() {
         })
     }
 
+    /**
+     * Call to fetch artists again
+     */
     private fun fetchArtists() {
         viewModel.fetchArtists()
     }
 
+    /**
+     * Call to fetch filtered artists
+     */
     private fun fetchArtistByText(artistName: String) {
         viewModel.fetchArtistByName(artistName)
     }
@@ -142,6 +151,9 @@ class ArtistCollectionListFragment : Fragment() {
 
     }
 
+    /**
+     * Manage navigation component
+     */
     private fun navigateToArtistDetail(artistMbid: String?) {
         artistMbid?.let { mbid ->
             val direction =

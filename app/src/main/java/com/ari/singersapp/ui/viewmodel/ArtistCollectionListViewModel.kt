@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.ari.singersapp.domain.GetArtistByNameUseCase
 import com.ari.singersapp.domain.GetArtistCollectionUseCase
 import com.ari.singersapp.model.artist.ArtistInterface
-import com.ari.singersapp.utils.NetworkHelper
+import com.ari.singersapp.utils.NetworkAvailabilityHelper
 import com.ari.singersapp.utils.Resource
 import com.ari.singersapp.utils.RestWsKeys
 import com.ari.singersapp.utils.Status
@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 class ArtistCollectionListViewModel(
     private val getArtistCollectionUseCase: GetArtistCollectionUseCase,
     private val getArtistByNameUseCase: GetArtistByNameUseCase,
-    private val networkHelper: NetworkHelper
+    private val networkHelper: NetworkAvailabilityHelper
 ) : ViewModel() {
 
     private val _artists = MutableLiveData<Resource<ArtistInterface>>()

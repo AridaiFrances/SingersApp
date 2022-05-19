@@ -6,111 +6,107 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.ArtistDetailFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayoutContainer"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/buttonOpenUrl"
+        android:padding="10dp"
+        android:background="@drawable/bg_orange_light_round_corners"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ScrollView
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewName"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Artist name" />
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutArtist"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_white_round_corners"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewArtist"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintStart_toEndOf="@+id/RelativeLayoutArtist"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/RelativeLayoutArtist">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewSummary"
+            style="@style/TextAppearance.AppCompat.Small"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:padding="10dp"
-            android:background="@drawable/bg_grey_round_corners"
-            android:layout_marginBottom="10dp"
-            android:scrollbars="none"
-            android:layout_weight="7">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:orientation="vertical"
-                android:padding="10dp"
-                android:background="@drawable/bg_grey_round_corners"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="6">
-
-                <RelativeLayout
-                    android:layout_width="220dp"
-                    android:layout_height="220dp"
-                    android:layout_margin="10dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/bg_white_round_corners">
-
-                    <ImageView
-                        android:id="@+id/imageViewArtist"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
-                        android:layout_centerInParent="true"/>
-
-                </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:textAlignment="textStart"
+            android:background="@drawable/bg_white_round_corners"
+            tools:text="Artist name" />
 
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/textViewName"
-                    style="@style/TextAppearance.AppCompat.Large"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:maxLines="1"
-                    android:textAlignment="center"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Artist name" />
+    </ScrollView>
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/textViewSummary"
-                    style="@style/TextAppearance.AppCompat.Small"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="5dp"
-                    android:textAlignment="textStart"
-                    android:background="@drawable/bg_white_round_corners"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Artist name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_grey_round_corners"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/clContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOpenUrl">
 
-        </ScrollView>
-
-        <LinearLayout
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="4"
-            android:background="@drawable/bg_grey_round_corners"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/top_albums" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/TextAppearance.AppCompat.Large"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:maxLines="1"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="@string/top_albums" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewAlbumDetail"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"/>
-
-
-        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAlbumDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:padding="10dp"/>
 
 
     </LinearLayout>

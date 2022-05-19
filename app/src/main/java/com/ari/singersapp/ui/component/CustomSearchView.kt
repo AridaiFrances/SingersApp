@@ -23,12 +23,14 @@ class CustomSearchView : LinearLayout {
     private var listener: OnSearchListener? = null
     private lateinit var binding: ViewCustomSearchBinding
 
+    /**
+     * Interface to manage the text control in fragment
+     */
     interface OnSearchListener {
-        //In this case we have two messages,
-        //the first that is sent when the process is successful.
+        //Filter content
         fun onSearchResults(textData: String)
 
-        //And The second message, when the process will fail.
+        //On text deleted
         fun onDeleteText()
 
     }
@@ -45,8 +47,6 @@ class CustomSearchView : LinearLayout {
         layoutInflater.inflate(R.layout.view_custom_search, this, false)
         binding = ViewCustomSearchBinding.inflate(layoutInflater, this, true)
 
-
-        //Obtain the references to child views
         binding.apply {
             imageViewDeleteSearch.setOnClickListener {
                 editTextSearch.text.clear()
@@ -68,7 +68,6 @@ class CustomSearchView : LinearLayout {
 
             buttonSearch.setOnClickListener { listener?.onSearchResults(editTextSearch.text.toString()) }
         }
-
 
     }
 

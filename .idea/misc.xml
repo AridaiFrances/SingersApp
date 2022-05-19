@@ -5,11 +5,13 @@
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.21510416666666668" />
         <entry key="app/src/main/res/drawable/bg_btn_selector.xml" value="0.2035" />
+        <entry key="app/src/main/res/drawable/bg_orange_light_round_corners.xml" value="0.2035" />
         <entry key="app/src/main/res/layout/activity_container.xml" value="0.31023550724637683" />
         <entry key="app/src/main/res/layout/adapter_album_view.xml" value="0.2" />
         <entry key="app/src/main/res/layout/adapter_artist_view.xml" value="0.2" />
         <entry key="app/src/main/res/layout/artist_collection_list_fragment.xml" value="0.2" />
         <entry key="app/src/main/res/layout/artist_detail_fragment.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_artist_web_view.xml" value="0.2608695652173913" />
         <entry key="app/src/main/res/layout/view_custom_search.xml" value="0.2" />
       </map>
     </option>

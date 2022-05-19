@@ -8,4 +8,5 @@
     <string name="top_albums">Top Albums</string>
     <string name="no_info">Artist without data</string>
     <string name="something_went_wrong">Oops… Something went wrong, the information could not be loaded</string>
+    <string name="could_not_load_content">Content could not be loaded</string>
 </resources>

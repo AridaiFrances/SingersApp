@@ -15,7 +15,9 @@ class ArtistsAdapter(
     private val onArtistClickListener: OnArtistClickListener?,
 ) : RecyclerView.Adapter<ArtistsAdapter.SingersAdapterViewHolder>() {
 
-
+    /**
+     * Interface to implement custom click
+     */
     interface OnArtistClickListener {
         fun onClick(artistMbid: String?)
     }
@@ -27,13 +29,11 @@ class ArtistsAdapter(
 
     override fun getItemCount(): Int = artistList.size
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SingersAdapterViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return SingersAdapterDataViewHolder(
             AdapterArtistViewBinding.inflate(layoutInflater, parent, false)
         )
-
     }
 
     override fun onBindViewHolder(holder: SingersAdapterViewHolder, position: Int) {
@@ -70,10 +70,8 @@ class ArtistsAdapter(
                         )
                     )
                 }
-
                 clContainer.setOnClickListener { onArtistClickListener?.onClick(artist.mbid) }
             }
         }
     }
-
 }
