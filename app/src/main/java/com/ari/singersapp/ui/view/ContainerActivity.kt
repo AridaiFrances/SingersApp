@@ -19,13 +19,14 @@ class ContainerActivity : AppCompatActivity() {
         initView()
     }
 
-    private fun initView(){
+    private fun initView() {
         initNavigation()
 
     }
 
-    private fun initNavigation(){
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+    private fun initNavigation() {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         val navController = navHostFragment.navController
         setupActionBarWithNavController(navController)
     }
@@ -33,6 +34,6 @@ class ContainerActivity : AppCompatActivity() {
     // Update action bar with the nav controller
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host)
-        return navController.navigateUp() ||  super.onSupportNavigateUp()
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

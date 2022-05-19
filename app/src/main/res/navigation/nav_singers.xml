@@ -8,24 +8,22 @@
     <fragment
         android:id="@+id/artistCollectionListFragment"
         android:name="com.ari.singersapp.ui.view.ArtistCollectionListFragment"
-        android:label="artist_collection_list_fragment"
-        tools:layout="@layout/artist_collection_list_fragment">
+        android:label="TOP 50 Artists"
+        tools:layout="@layout/artist_collection_list_fragment" >
         <action
-            android:id="@+id/action_artistCollectionListFragment_to_artistDetailFragment"
-            app:destination="@id/artistDetailFragment" />
+            android:id="@+id/action_artistCollectionListFragment_to_artistDetailFragment2"
+            app:destination="@id/artistDetailFragment"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/artistDetailFragment"
         android:name="com.ari.singersapp.ui.view.ArtistDetailFragment"
-        android:label="artist_detail_fragment"
+        android:label="Artist details"
         tools:layout="@layout/artist_detail_fragment">
-        <action
-            android:id="@+id/action_artistDetailFragment_to_artistWebViewFragment"
-            app:destination="@id/artistWebViewFragment" />
+        <argument
+            android:name="artistMbid"
+            app:argType="string" />
+
     </fragment>
-    <fragment
-        android:id="@+id/artistWebViewFragment"
-        android:name="com.ari.singersapp.ui.view.ArtistWebViewFragment"
-        android:label="fragment_artist_web_view"
-        tools:layout="@layout/fragment_artist_web_view" />
 </navigation>

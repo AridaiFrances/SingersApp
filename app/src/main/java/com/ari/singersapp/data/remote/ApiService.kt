@@ -1,7 +1,7 @@
 package com.ari.singersapp.data.remote
 
-import com.ari.singersapp.model.artist.Artist
 import com.ari.singersapp.model.artist.ArtistCollectionResponse
+import com.ari.singersapp.model.artist.artist_info.ArtistInfoResponse
 import com.ari.singersapp.model.artist.search_by_name.ArtistByNameResponse
 import com.ari.singersapp.model.artist.top_albums.ArtistTopAlbumsResponse
 import com.ari.singersapp.utils.RestWsKeys
@@ -50,7 +50,7 @@ interface ApiService {
         @Field("method") method: String,
         @Field("format") format: String,
         @Field("api_key") apiKey: String
-    ): Response<Artist>
+    ): Response<ArtistInfoResponse>
 
     /**
      * Test call: http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=cher&api_key=YOUR_API_KEY&format=json

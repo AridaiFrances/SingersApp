@@ -1,7 +1,7 @@
 package com.ari.singersapp.data.remote
 
-import com.ari.singersapp.model.artist.Artist
 import com.ari.singersapp.model.artist.ArtistCollectionResponse
+import com.ari.singersapp.model.artist.artist_info.ArtistInfoResponse
 import com.ari.singersapp.model.artist.search_by_name.ArtistByNameResponse
 import com.ari.singersapp.model.artist.top_albums.ArtistTopAlbumsResponse
 import retrofit2.Response
@@ -27,7 +27,7 @@ class ApiHelperImpl(private val apiService: ApiService) : ApiHelper {
         method: String,
         format: String,
         apiKey: String
-    ): Response<Artist> = apiService.getArtistInfo(artistMbid, method, format, apiKey)
+    ): Response<ArtistInfoResponse> = apiService.getArtistInfo(artistMbid, method, format, apiKey)
 
     override suspend fun getArtistTopAlbums(
         artistMbid: String,
