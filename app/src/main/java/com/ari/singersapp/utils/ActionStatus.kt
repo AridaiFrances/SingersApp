@@ -1,6 +1,6 @@
 package com.ari.singersapp.utils
 
-enum class Status {
+enum class ActionStatus {
     SUCCESS,
     ERROR,
     LOADING

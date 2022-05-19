@@ -4,8 +4,12 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 
-class NetworkHelper constructor(private val context: Context) {
+class NetworkAvailabilityHelper constructor(private val context: Context) {
 
+    /**
+     * Check that we have internet on the device before making a call
+     * @return true when internet is available
+     */
     fun isNetworkConnected(): Boolean {
         var result = false
         val connectivityManager =

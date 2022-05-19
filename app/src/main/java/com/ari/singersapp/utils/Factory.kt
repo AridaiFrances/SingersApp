@@ -9,10 +9,10 @@ class Factory {
 
         private fun createGson(): Gson {
             //It allows us to deserialize and serialize classes
-            val builder = GsonBuilder();
+            val builder = GsonBuilder()
 
             //Create and return Gson object
-            return builder.create();
+            return builder.create()
         }
     }
 }

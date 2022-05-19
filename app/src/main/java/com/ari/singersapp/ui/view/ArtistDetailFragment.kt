@@ -6,8 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ari.singersapp.databinding.ArtistDetailFragmentBinding
+import com.ari.singersapp.ui.viewmodel.ArtistDetailViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ArtistDetailFragment : Fragment() {
+
+    private val viewModel: ArtistDetailViewModel by viewModel()
 
     private lateinit var binding: ArtistDetailFragmentBinding
 

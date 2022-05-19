@@ -5,4 +5,4 @@ import com.google.gson.annotations.SerializedName
 data class ArtistCollectionResponse(
     @SerializedName("artists")
     val artistsCollection: Artists
-): ArtistInterface
+) : ArtistInterface

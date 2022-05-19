@@ -4,4 +4,4 @@ import com.ari.singersapp.model.artist.ArtistInterface
 
 data class ArtistByNameResponse(
     val results: Results
-): ArtistInterface
+) : ArtistInterface

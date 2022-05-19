@@ -5,7 +5,7 @@ import com.ari.singersapp.BuildConfig
 import com.ari.singersapp.data.remote.ApiHelper
 import com.ari.singersapp.data.remote.ApiHelperImpl
 import com.ari.singersapp.data.remote.ApiService
-import com.ari.singersapp.utils.NetworkHelper
+import com.ari.singersapp.utils.NetworkAvailabilityHelper
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -24,7 +24,7 @@ val appModule = module {
     }
 }
 
-private fun provideNetworkHelper(context: Context) = NetworkHelper(context)
+private fun provideNetworkHelper(context: Context) = NetworkAvailabilityHelper(context)
 
 private fun provideOkHttpClient() = if (BuildConfig.DEBUG) {
     val loggingInterceptor = HttpLoggingInterceptor()
