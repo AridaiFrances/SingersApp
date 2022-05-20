@@ -12,9 +12,7 @@
         tools:layout="@layout/artist_collection_list_fragment" >
         <action
             android:id="@+id/action_artistCollectionListFragment_to_artistDetailFragment2"
-            app:destination="@id/artistDetailFragment"
-            app:exitAnim="@android:anim/slide_out_right"
-            app:popEnterAnim="@android:anim/slide_in_left" />
+            app:destination="@id/artistDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/artistDetailFragment"
@@ -26,9 +24,7 @@
             app:argType="string" />
         <action
             android:id="@+id/action_artistDetailFragment_to_artistWebViewFragment"
-            app:destination="@id/artistWebViewFragment"
-            app:exitAnim="@android:anim/slide_out_right"
-            app:popEnterAnim="@android:anim/slide_in_left"/>
+            app:destination="@id/artistWebViewFragment" />
 
     </fragment>
     <fragment

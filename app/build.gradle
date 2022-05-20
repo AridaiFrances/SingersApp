@@ -8,16 +8,16 @@ plugins {
 android {
     signingConfigs {
         debug {
-            ""
-            storePassword ""
-            keyAlias ""
-            keyPassword ""
+            storeFile file('****')
+            storePassword '****'
+            keyAlias '****'
+            keyPassword '****'
         }
         release {
-        storePassword ""
-            keyPassword ""
-            keyAlias ""
-            storeFile ""
+            storeFile file('****')
+            storePassword '****'
+            keyAlias '****'
+            keyPassword '****'
         }
     }
     compileSdk 32
@@ -32,12 +32,14 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField 'String', 'BASE_URL', "\"https://ws.audioscrobbler.com/2.0/\""
+        signingConfig signingConfigs.release
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
