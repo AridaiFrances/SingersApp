@@ -5,9 +5,10 @@
     android:id="@+id/clContainer"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:layout_margin="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
     android:padding="5dp"
-    android:background="@drawable/bg_round_corners_with_red_border">
+    android:background="@drawable/bg_grey_with_semi_borders">
 
     <ImageView
         android:id="@+id/imageViewAvatar"

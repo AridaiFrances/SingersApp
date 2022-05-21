@@ -6,11 +6,14 @@
         <entry key="../../../../../layout/custom_preview.xml" value="0.21510416666666668" />
         <entry key="app/src/main/res/drawable/bg_btn_last_fm_red.xml" value="0.2035" />
         <entry key="app/src/main/res/drawable/bg_btn_selector.xml" value="0.2035" />
+        <entry key="app/src/main/res/drawable/bg_grey_with_semi_borders.xml" value="0.2075" />
+        <entry key="app/src/main/res/drawable/bg_grey_with_semi_borders_black.xml" value="0.2075" />
         <entry key="app/src/main/res/drawable/bg_orange_light_round_corners.xml" value="0.2035" />
         <entry key="app/src/main/res/drawable/bg_round_corners_with_black_border.xml" value="0.2035" />
         <entry key="app/src/main/res/drawable/bg_round_corners_with_border.xml" value="0.2035" />
         <entry key="app/src/main/res/drawable/btn_disabled.xml" value="0.2035" />
         <entry key="app/src/main/res/drawable/btn_enabled.xml" value="0.2035" />
+        <entry key="app/src/main/res/layout-land/artist_detail_fragment.xml" value="0.1693121693121693" />
         <entry key="app/src/main/res/layout/activity_container.xml" value="0.31023550724637683" />
         <entry key="app/src/main/res/layout/adapter_album_view.xml" value="0.2" />
         <entry key="app/src/main/res/layout/adapter_artist_view.xml" value="0.2" />
