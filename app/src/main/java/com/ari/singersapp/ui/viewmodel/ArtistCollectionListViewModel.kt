@@ -27,10 +27,6 @@ class ArtistCollectionListViewModel(
         fetchArtists()
     }
 
-    private fun <T> reloadArtistInfo(data: T?): Resource<T> {
-        return Resource(Status.SUCCESS, data, null)
-    }
-
     fun fetchArtists() {
         viewModelScope.launch {
             _artists.postValue(Resource.loading(null))
@@ -60,7 +56,6 @@ class ArtistCollectionListViewModel(
                 ).let {
                     if (it.isSuccessful) {
                         _artists.postValue(Resource.success(it.body()))
-                        reloadArtistInfo(it.body())
                     } else _artists.postValue(Resource.error(it.errorBody().toString(), null))
                 }
             } else _artists.postValue(Resource.error("No internet connection", null))
