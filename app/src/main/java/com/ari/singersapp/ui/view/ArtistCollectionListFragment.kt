@@ -45,7 +45,9 @@ class ArtistCollectionListFragment : Fragment() {
     private fun initFragment() {
         initArtistRecyclerView()
         initCustomSearchView()
+        initListeners()
         setupObserver()
+        fetchArtists()
     }
 
     /**
@@ -97,6 +99,12 @@ class ArtistCollectionListFragment : Fragment() {
             recyclerView.adapter = adapter
         }
 
+    }
+
+    private fun initListeners() {
+        binding.buttonRetry.setOnClickListener {
+            fetchArtists()
+        }
     }
 
     /**

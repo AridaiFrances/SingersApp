@@ -23,9 +23,6 @@ class ArtistCollectionListViewModel(
     val artists: LiveData<Resource<ArtistInterface>>
         get() = _artists
 
-    init {
-        fetchArtists()
-    }
 
     fun fetchArtists() {
         viewModelScope.launch {
